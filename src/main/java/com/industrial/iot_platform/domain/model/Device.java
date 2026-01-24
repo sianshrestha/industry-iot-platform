@@ -1,4 +1,4 @@
-package com.industral.iot_platform.domain.model;
+package com.industrial.iot_platform.domain.model;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -13,6 +13,8 @@ import java.util.UUID;
 @NoArgsConstructor
 @Table(name = "devices")
 @Builder
+@Getter
+@Setter
 public class Device {
 
     @Id

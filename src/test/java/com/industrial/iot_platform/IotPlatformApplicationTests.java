@@ -1,4 +1,4 @@
-package com.industral.iot_platform;
+package com.industrial.iot_platform;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

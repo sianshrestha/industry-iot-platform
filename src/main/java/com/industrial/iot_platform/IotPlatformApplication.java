@@ -1,4 +1,4 @@
-package com.industral.iot_platform;
+package com.industrial.iot_platform;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

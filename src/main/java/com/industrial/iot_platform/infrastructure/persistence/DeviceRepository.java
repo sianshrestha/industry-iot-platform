@@ -1,6 +1,6 @@
-package com.industral.iot_platform.infrastructure.persistence;
+package com.industrial.iot_platform.infrastructure.persistence;
 
-import com.industral.iot_platform.domain.model.Device;
+import com.industrial.iot_platform.domain.model.Device;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

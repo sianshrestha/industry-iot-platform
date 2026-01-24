@@ -34,3 +34,5 @@ hs_err_pid*
 # OS Specific
 .DS_Store
 Thumbs.db
+
+.env
