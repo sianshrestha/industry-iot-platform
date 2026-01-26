@@ -11,5 +11,5 @@ public class DeviceRegisterResponse {
 
     private UUID deviceId;
 
-    private String apiSecrect;
+    private String apiSecret;
 }

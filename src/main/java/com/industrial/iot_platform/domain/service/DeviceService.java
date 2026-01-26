@@ -58,7 +58,7 @@ public class DeviceService {
         // 6. Return Response with Device ID and API Secret
         return DeviceRegisterResponse.builder()
                 .deviceId(device.getId())
-                .apiSecrect(apiKey)
+                .apiSecret(apiKey)
                 .build();
     }
 

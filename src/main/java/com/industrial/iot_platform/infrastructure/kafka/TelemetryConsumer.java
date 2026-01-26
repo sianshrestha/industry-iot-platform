@@ -1,6 +1,7 @@
 package com.industrial.iot_platform.infrastructure.kafka;
 
 import com.industrial.iot_platform.domain.model.SensorReading;
+import com.industrial.iot_platform.domain.service.AlertService;
 import com.industrial.iot_platform.infrastructure.persistence.SensorReadingRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,6 +19,7 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class TelemetryConsumer {
     private final SensorReadingRepository repository;
+    private final AlertService alertService;
     private final ObjectMapper objectMapper;
 
     @KafkaListener(topics = "telemetry_topic", groupId = "iot-processor-group")
@@ -39,6 +41,9 @@ public class TelemetryConsumer {
             // 3. Save to database
             repository.save(sensorReading);
             log.info("Saved sensor reading telemetry to DB for device: {}", sensorReading.getDeviceId());
+
+            // 4. Check for alerts
+            alertService.checkForAnomalies(sensorReading);
 
             } catch (Exception e) {
                 log.error("Error processing telemetry: {}", message, e);
