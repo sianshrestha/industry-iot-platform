@@ -1,5 +1,23 @@
 
 services:
+  iot-app:
+    build: .
+    container_name: iot-backend
+    ports:
+        - "8080:8080"
+    environment:
+      DB_HOST: iot-timescaledb   # Matches container_name of database
+      DB_PORT: 5432              # Internal Docker port (NOT 5433)
+      KAFKA_HOST: iot-kafka      # Matches container_name of kafka
+      KAFKA_PORT: 29092
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY}
+      JWT_EXPIRES_IN: ${JWT_EXPIRES_IN}
+    depends_on:
+      - timescaledb
+      - kafka
+    networks:
+      - iot-network
+
   timescaledb:
     image: timescale/timescaledb:latest-pg16
     container_name: iot-timescaledb
@@ -54,6 +72,7 @@ services:
       KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:29092
     networks:
       - iot-network
+
 
 volumes:
   timescaledb_data:

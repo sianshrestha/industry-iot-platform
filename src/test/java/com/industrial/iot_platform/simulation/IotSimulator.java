@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 
 public class IotSimulator {
     private static final String BASE_URL = "http://localhost:8080";
-    private static final int DEVICE_COUNT = 10;       // How many machines?
+    private static final int DEVICE_COUNT = 20;       // How many machines?
     private static final int MESSAGES_PER_DEVICE = 20; // How many messages each sends?
 
     private static final HttpClient client = HttpClient.newHttpClient();
