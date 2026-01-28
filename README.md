@@ -1,4 +1,4 @@
-# 🏭 Industrial IoT Device Management Platform
+# 🏭 Industrial IoT Data Platform
 
 ![Java](https://img.shields.io/badge/Java-21-orange.svg)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.0.1-green.svg)
